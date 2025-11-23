@@ -1,0 +1,75 @@
+generator client {
+  provider        = "prisma-client-js"
+  previewFeatures = ["views"]
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model Check {
+  id        Int        @id @default(autoincrement())
+  summa     Float      @default(12000.2)
+  intake    Int        @default(0)
+  closed    Boolean    @default(false)
+  createdAt DateTime   @default(now())
+  date      DateTime   @default(now())
+  meterings Metering[]
+}
+
+model Counter {
+  id        Int        @id @default(autoincrement())
+  isCommon  Boolean    @default(false)
+  userId    Int
+  num       String     @unique
+  User      User       @relation(fields: [userId], references: [id])
+  meterings Metering[]
+}
+
+model User {
+  id          Int       @id @default(autoincrement())
+  tg_id       Int       @default(0)
+  name        String    @unique
+  phone       String    @default("")
+  role        Role      @default(USER)
+  isRegistred Boolean   @default(false)
+  counters    Counter[]
+}
+
+model Metering {
+  id           Int      @id @default(autoincrement())
+  createdAt    DateTime @default(now())
+  value        Int      @default(0)
+  payment      Float    @default(0.0)
+  contribution Float    @default(0.0)
+  isNoValue    Boolean  @default(true)
+  checkId      Int
+  counterId    Int
+  Check        Check    @relation(fields: [checkId], references: [id])
+  Counter      Counter  @relation(fields: [counterId], references: [id])
+}
+
+/// The underlying view does not contain a valid unique identifier and can therefore currently not be handled by Prisma Client.
+// view CounterInfo {
+//   id   Int     @unique
+//   num  String?
+//   name String?
+// }
+
+/// The underlying view does not contain a valid unique identifier and can therefore currently not be handled by Prisma Client.
+// view MeteringView {
+//   date    DateTime?
+//   summa   Float?
+//   intake  Int?
+//   num     String?
+//   id      Int       @unique
+//   value   Int?
+//   payment Float?
+// }
+
+enum Role {
+  USER
+  ADMIN
+  GUEST
+}

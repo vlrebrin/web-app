@@ -1,0 +1,83 @@
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+ /* @import "tailwindcss"; */
+
+/* @tailwind base; */
+/* @tailwind components; */
+/* @tailwind utilities; */
+
+/* @layer base {
+  body {
+    @apply bg-gray-400;
+    background-color: var(--tg-theme-bg-color);
+  }
+} */
+
+/* @layer components { */
+  /* .wrapper-brd {
+    @apply border-solid border-r-8 border-black p-10;
+  } */
+
+  /* .errorMessage {
+    @apply bg-[ #ff0000] text-white p-[6px]
+   background: #ff0000;
+  color: #fff;
+  padding: 6px; 
+  } */
+
+  /* .wrapper {
+    @apply  block bg-transparent  w-[375px] h-[660px] my-20 mx-auto
+    @apply bg-gray-100  w-[375px] h-[500px] m-auto;
+    @apply border-solid border-4 rounded-2xl border-black;
+    @apply bg-amber-100 w-[375px] min-h-screen mx-auto p-0;
+    background-color: var(--tg-theme-bg-color);
+  } */
+
+.wrapper {
+    @apply  block bg-transparent w-96 h-96 my-20 mx-auto;
+    @apply bg-gray-100  m-auto;
+    @apply border-solid border-4 rounded-2xl border-black;
+    @apply bg-amber-100 min-h-screen mx-auto p-0;
+    background-color: var(--tg-theme-bg-color);
+  }
+
+  /* .modal{
+    @apply w-[375px] h-[660px] mx-auto
+  } */
+
+  /* Удаляем стрелки из input type='number
+    см. https://stackoverflow.com/questions/3790935/can-i-hide-the-html5-number-input-s-spin-box
+  */
+
+  input::-webkit-outer-spin-button,
+  input::-webkit-inner-spin-button {
+    /* display: none; <- Crashes Chrome on hover */
+    -webkit-appearance: none;
+    margin: 0;
+    /* <-- Apparently some margin are still there even though it's hidden */
+  }
+
+
+  /* Chrome, Edge, and Safari */
+/* *::-webkit-scrollbar {
+  width: 17px;
+}
+
+*::-webkit-scrollbar-track {
+  background: var(--primary);
+  border-radius: 5px;
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: var(--secondary);
+  border-radius: 14px;
+  border: 3px solid var(--primary);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: var(--tertiary);
+} */
