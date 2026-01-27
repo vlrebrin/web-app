@@ -9,16 +9,16 @@ export async function createCheck(prevStateany, data) {
     const intake = Number(data.get('intake'))
     const summa = Number(data.get('summa'))
 
-    const lastCheck = await prisma.check.findFirst({ orderBy: { date: 'desc' } })
-    let checkDate = new Date(Date.now())
-    if (lastCheck) checkDate = lastCheck.date
-    checkDate.setMonth(checkDate.getMonth() + 1)
+    // const lastCheck = await prisma.check.findFirst({ orderBy: { date: 'desc' } })
+    // let checkDate = new Date(Date.now())
+    // if (lastCheck) checkDate = lastCheck.date
+    // checkDate.setMonth(checkDate.getMonth() + 1)
 
     const check = await prisma.check.create({
       data: {
         intake: intake,
         summa: summa,
-        date: checkDate
+        //date: checkDate
       }
     })
 

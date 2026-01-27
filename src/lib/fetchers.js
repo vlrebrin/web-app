@@ -26,7 +26,7 @@ export const getMeterings = async (url) => {
 
 
 export const getChecks = async (url) => {
-console.log(url)
+//console.log(url)
     const res = await fetch(url) //Получаем в формате json
     if (!res.ok) {
       const error = new Error(' Сбой при запросе данных ')

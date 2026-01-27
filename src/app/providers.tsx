@@ -8,11 +8,11 @@ export default async function Providers({ children }: {
 {
    return (
     <HeroUIProvider>
-       <SessionProvider
-        // refetchInterval={5}
-       >
+       {/* <SessionProvider */}
+        {/* // refetchInterval={5} */}
+       {/* > */}
         {children}
-      </SessionProvider>
+      {/* </SessionProvider> */}
     </HeroUIProvider>
   )
 }

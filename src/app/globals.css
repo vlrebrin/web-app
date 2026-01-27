@@ -1,10 +1,11 @@
+@import "tailwindcss";
 
-@tailwind base;
+/* @tailwind base;
 @tailwind components;
-@tailwind utilities;
+@tailwind utilities; */
 
 
- /* @import "tailwindcss"; */
+ 
 
 /* @tailwind base; */
 /* @tailwind components; */
@@ -37,13 +38,13 @@
     background-color: var(--tg-theme-bg-color);
   } */
 
-.wrapper {
-    @apply  block bg-transparent w-96 h-96 my-20 mx-auto;
+/* .wrapper {
+    @apply  block bg-transparent w-96 h-[660px] my-20 mx-auto;
     @apply bg-gray-100  m-auto;
     @apply border-solid border-4 rounded-2xl border-black;
     @apply bg-amber-100 min-h-screen mx-auto p-0;
     background-color: var(--tg-theme-bg-color);
-  }
+  } */
 
   /* .modal{
     @apply w-[375px] h-[660px] mx-auto

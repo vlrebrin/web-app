@@ -35,7 +35,7 @@ export function Home({session}) {
           fullWidth
           size="sm"
           onPress={() => router.push('/meterings')}
-        > Показания </Button>
+        > История </Button>
       </div>
     )
   })
